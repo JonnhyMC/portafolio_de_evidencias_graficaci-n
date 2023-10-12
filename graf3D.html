@@ -68,18 +68,30 @@
       <!-- health section start -->
       <div class="health_section layout_padding">
          <div class="container">
-            <h1 class="health_taital">Graficas 3D</h1>
-            <p class="health_text">En este apartado se mostraran los distintos proyectos respecto a graficas 3D</p>
-            <div class="health_section layout_padding">
-               <div class="row">
-                  <div class="col-sm-7">
-                  </div>
-                  <div class="col-sm-5">
-                  </div>
-               </div>
-            </div>
+             <h1 class="health_taital">Gráficos 3D</h1>
+             <p class="health_text">En este apartado se mostrarán los distintos proyectos respecto a prácticas en 3D</p>
+             <div class="health_section layout_padding" style="margin-top: -120px;">
+                 <div class="row">
+                     <div class="col-sm-4">
+                         <img src="images/Oruga.png" alt="Imagen 1" class="zoomable-image" style=" padding: 10px;"> <!-- Ajusta el ancho y el relleno según tus necesidades -->
+                     </div>
+                     <div class="col-sm-4">
+                         <img src="images/CopaVino.png" alt="Imagen 2" class="zoomable-image" style=" padding: 10px;"> <!-- Ajusta el ancho y el relleno según tus necesidades -->
+                     </div>
+                     <div class="col-sm-4">
+                         <img src="images/Mesa.png" alt="Imagen 3" class="zoomable-image" style=" padding: 10px;"><!-- Ajusta el ancho y el relleno según tus necesidades -->
+                     </div>
+                     <div class="col-sm-4">
+                         <img src="images/CascoV.png" alt="Imagen 4" class="zoomable-image" style=" padding: 10px;"> <!-- Ajusta el ancho y el relleno según tus necesidades -->
+                     </div>
+                     <div class="col-sm-4">
+                         <img src="images/PintarVer.png" alt="Imagen 5" class="zoomable-image" style=" padding: 10px;"><!-- Ajusta el ancho y el relleno según tus necesidades -->
+                     </div>
+                     <!-- Agrega más imágenes aquí con el mismo estilo -->
+                 </div>
+             </div>
          </div>
-      </div>
+     </div>
       <!-- health section end -->
       <!-- footer section start -->
       <div class="footer_section layout_padding">
@@ -114,5 +126,26 @@
       <!-- javascript --> 
       <script src="js/owl.carousel.js"></script>
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script>
+         const zoomableImages = document.querySelectorAll(".zoomable-image");
+     
+         zoomableImages.forEach((image) => {
+             image.addEventListener("click", () => {
+                 const imageSrc = image.getAttribute("src");
+                 const overlay = document.createElement("div");
+                 overlay.classList.add("overlay");
+                 const zoomedImage = document.createElement("img");
+                 zoomedImage.classList.add("zoomed-image");
+                 zoomedImage.src = imageSrc;
+     
+                 overlay.appendChild(zoomedImage);
+                 document.body.appendChild(overlay);
+     
+                 overlay.addEventListener("click", () => {
+                     document.body.removeChild(overlay);
+                 });
+             });
+         });
+     </script>
    </body>
 </html>

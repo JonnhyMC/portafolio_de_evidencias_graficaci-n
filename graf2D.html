@@ -68,15 +68,29 @@
       <!-- health section start -->
       <div class="health_section layout_padding">
          <div class="container">
-            <h1 class="health_taital">Graficas 2D</h1>
-            <p class="health_text">En este apartado se mostraran los distintos proyectos respecto a graficas 2D</p>
-            <div class="health_section layout_padding">
+            <h1 class="health_taital">Gráficos 2D</h1>
+            <p class="health_text">En este apartado se mostraran los distintos proyectos respecto a practicas 2D</p>
+            <div class="health_section layout_padding" style="margin-top: -100px;"> 
                <div class="row">
-                  <div class="col-sm-7">
+                  <div class="col-sm-4">
+                     <img src="images/practica1.jpg" alt="Imagen 1" class="zoomable-image" style="width: 100%; max-width: 300px; padding: 10px;">
+                 </div>
+                  <div class="col-sm-4">
+                      <img src="images/arbol1rosa.png" alt="Imagen 2" class="zoomable-image" style="width: 100%; max-width: 300px; padding: 10px;">
                   </div>
-                  <div class="col-sm-5">
+                  <div class="col-sm-4">
+                      <img src="images/arbol2verde.png" alt="Imagen 3" class="zoomable-image" style="width: 100%; max-width: 300px; padding: 10px;">
                   </div>
-               </div>
+                  <div class="col-sm-4">
+                      <img src="images/arbol3amarillo.png" alt="Imagen 4" class="zoomable-image" style="width: 100%; max-width: 300px; padding: 10px;">
+                  </div>
+                  <div class="col-sm-4">
+                     <img src="images/Practica3 .png" alt="Imagen 5" class="zoomable-image" style="width: 100%; max-width: 777px; padding: 10px;">
+                 </div> 
+                  <div class="col-sm-4">
+                      <img src="images/Practica 4.png" alt="Imagen 6" class="zoomable-image" style="width: 100%; max-width: 300px; padding: 10px;">
+                  </div>
+              </div>
             </div>
          </div>
       </div>
@@ -114,5 +128,26 @@
       <!-- javascript --> 
       <script src="js/owl.carousel.js"></script>
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script>
+         const zoomableImages = document.querySelectorAll(".zoomable-image");
+     
+         zoomableImages.forEach((image) => {
+             image.addEventListener("click", () => {
+                 const imageSrc = image.getAttribute("src");
+                 const overlay = document.createElement("div");
+                 overlay.classList.add("overlay");
+                 const zoomedImage = document.createElement("img");
+                 zoomedImage.classList.add("zoomed-image");
+                 zoomedImage.src = imageSrc;
+     
+                 overlay.appendChild(zoomedImage);
+                 document.body.appendChild(overlay);
+     
+                 overlay.addEventListener("click", () => {
+                     document.body.removeChild(overlay);
+                 });
+             });
+         });
+     </script>
    </body>
 </html>
